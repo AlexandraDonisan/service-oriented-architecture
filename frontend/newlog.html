@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login form</title>
+    <link rel="stylesheet" href="stylesRegistration.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input name="name" id="name" type="name" placeholder="Name" />
+                <input name="email" id="email" type="email" placeholder="Email" />
+                <input name="password" id="password" type="password" placeholder="Password" />
+                <button id="submitRegisterButton" type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input name="email" id="email" type="email" placeholder="Email" />
+                <input name="password" id="password" type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button id="submitLoginButton" type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="utils.js"></script>
+
+</body>
+
+</html>
