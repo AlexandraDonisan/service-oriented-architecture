@@ -2,6 +2,7 @@ import json
 import requests
 
 from flask import Flask, jsonify, request, redirect, url_for
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 from pymongo import MongoClient
 
@@ -15,21 +16,21 @@ cocktail = db["Cocktail"]
 
 
 app = Flask(__name__)
+CORS(app)
 jwt = JWTManager(app)
 
-app.config["JWT_SECRET_KEY"] = "this-is-secret-key"
+app.config["JWT_SECRET_KEY"] = "secret-key"
 
 
 @app.route("/", methods=['GET'])
 @jwt_required()
 def dasboard():
-    return jsonify(message="Welcome Den San!")
+    return jsonify(message="Welcome to the Cocktail App!")
 
 
 @app.route("/register", methods=["POST"])
 def register():
     email = request.form["email"]
-    # test = User.query.filter_by(email=email).first()
     test = user.find_one({"email": email})
     if test:
         return jsonify(message="User Already Exists"), 409
