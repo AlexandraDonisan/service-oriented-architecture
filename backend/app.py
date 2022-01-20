@@ -38,7 +38,8 @@ def register():
         password = request.form["password"]
         user_info = dict(first_name=first_name, last_name=last_name, email=email, password=password)
         user.insert_one(user_info)
-        return jsonify(message="User added sucessfully"), 201
+        access_token = create_access_token(identity=email)
+        return jsonify(message="User added sucessfully", access_token=access_token), 201
 
 
 @app.route("/login", methods=["POST"])
@@ -69,6 +70,7 @@ def get_existing_cocktails():
 
 
 @app.route("/cocktail/<name>", methods=["GET"])
+@jwt_required()
 def get_cocktail_by_name(name):
     beverage = cocktail.find_one({"strDrink": name})
     if beverage:

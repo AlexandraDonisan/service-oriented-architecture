@@ -27,8 +27,18 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: hsl(220, 10%, 12%);
+  /* background: hsl(220, 10%, 12%); */
   font-family: "Lato", "Segoe Ui", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  background: #525151;
+  background: -webkit-linear-gradient(to right, #000000, #292828);
+  background: linear-gradient(to right, #000000, #292828);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 }
 
 /* .flip-card-container */
@@ -157,6 +167,8 @@ figcaption {
 
   color: white;
   background: hsla(var(--hue), 25%, 10%, 0.5);
+  border: 1px solid var(--grey);
+  border-radius: 1000px;
 }
 
 /* .img-bg */

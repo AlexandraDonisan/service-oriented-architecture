@@ -32,6 +32,7 @@ const sendRegisterRequest = (form) => {
         })
         .then(result => {
             console.log(result);
+            localStorage.setItem('token', result["access_token"])
             window.location.replace("index.html")
         })
         .catch(error => {
@@ -52,7 +53,7 @@ const sendLoginRequest = (form) => {
             }
         })
         .then(result => {
-            console.log(result);
+            localStorage.setItem('token', result["access_token"]);
             window.location.replace("index.html")
         })
         .catch(error => {
@@ -61,12 +62,18 @@ const sendLoginRequest = (form) => {
 };
 
 const getCocktailRequest = (cocktail_name) => {
-    const request = new Request(`http://localhost:3000/cocktail/${cocktail_name}`, { method: 'GET',});
+    token = localStorage.getItem('token');
+    console.log(token)
+    const headers = new Headers()
+    headers.append("Authorization",  `Bearer ${token}`)
+    const request = new Request(`http://localhost:3000/cocktail/${cocktail_name}`, { method: 'GET', headers: headers,});
 
     fetch(request)
         .then(response => {
             if (response.status === 200) {
                 return response.json();
+            } else if (response.status === 404){
+                alert("Cocktail not found! Search for another beverage!");
             } else {
                 console.log(response);
                 throw new Error('Something went wrong on api server!');
