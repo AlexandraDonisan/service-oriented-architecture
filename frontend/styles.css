@@ -41,6 +41,11 @@ body {
   transition: transform 0.6s ease-in-out;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 /* .flip-card-container */
 .flip-card-container {
   --hue: 150;
@@ -171,6 +176,11 @@ figcaption {
   border-radius: 1000px;
 }
 
+::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
 /* .img-bg */
 .img-bg {
   background: hsla(var(--hue), 25%, 10%, 0.5);
@@ -270,6 +280,9 @@ button {
   transition: 0.3s;
 
   cursor: pointer;
+
+  margin-top: 15px;
+  background: hsla(var(--hue), 25%, 10%, 0.5);
 }
 
 #instructions {
@@ -281,9 +294,9 @@ button {
 
 button:hover,
 button:focus {
-  color: var(--primary);
+  color: #ecbe27;
   background: hsla(var(--hue), 25%, 10%, 0.2);
-  border-color: currentColor;
+  border-color: #ecbe27;
 }
 
 button:active {
