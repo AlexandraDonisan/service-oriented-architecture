@@ -41,6 +41,12 @@ body {
   transition: transform 0.6s ease-in-out;
 }
 
+.cocktailContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 form {
   display: flex;
   flex-direction: column;

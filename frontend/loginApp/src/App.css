@@ -24,6 +24,11 @@ h2 {
   text-align: center;
 }
 
+::placeholder {
+  color: rgb(66, 66, 66);
+  opacity: 0.7;
+}
+
 p {
   font-size: 14px;
   font-weight: 100;
