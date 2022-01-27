@@ -5,15 +5,14 @@ class Cocktails extends React.Component {
     constructor(props) {
         super(props);
         this.getCocktailRequest = this.getCocktailRequest.bind(this);
-        console.log('constructor');
     }
 
     getCocktailRequest(event) {
+        console.log(event)
         event.preventDefault();
         const formData = new FormData(event.target);
         const cocktail_name = formData.get("name");
         const token = localStorage.getItem('token');
-        console.log(token)
         const headers = new Headers()
         headers.append("Authorization", `Bearer ${token}`)
         const request = new Request(`http://localhost:3000/cocktail/${cocktail_name}`, { method: 'GET', headers: headers,});
@@ -22,6 +21,8 @@ class Cocktails extends React.Component {
             .then(response => {
                 if (response.status === 200) {
                     return response.json();
+                } else if (response.status === 401) {
+                    window.localStorage.removeItem('token');
                 } else if (response.status === 404){
                     alert("Cocktail not found! Search for another beverage!");
                 } else {
@@ -86,8 +87,6 @@ class Cocktails extends React.Component {
     
             </div>
         </div>
-        
-    
         
         <div className="flip-card-container">
             <div className="flip-card">
