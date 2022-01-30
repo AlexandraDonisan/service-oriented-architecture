@@ -2,9 +2,9 @@
 
 Think of a spirit of your taste and "CockTale" will tell you how to prepare the beverage you deserve.
 
-![CockTale Architecture](https://github.com/AlexandraDonisan/service-oriented-architecture/images/blob/main/CockTale%20Architecture.png)
+![CockTale Architecture](https://github.com/AlexandraDonisan/service-oriented-architecture/blob/main/images/CockTale%20Architecture.png)
 
-![C4 Diagram](https://github.com/AlexandraDonisan/service-oriented-architecture/images/blob/main/C4%Diagram.PNG)
+![C4 Diagram](https://github.com/AlexandraDonisan/service-oriented-architecture/blob/main/images/C4%20Daigram.PNG)
 
 <br>
 
@@ -29,6 +29,6 @@ Think of a spirit of your taste and "CockTale" will tell you how to prepare the 
   - Login App
   - Cocktail App
 
-  ![Docker Containers](https://github.com/AlexandraDonisan/service-oriented-architecture/images/blob/main/Docker%20Containers.PNG)
+  ![Docker Containers](https://github.com/AlexandraDonisan/service-oriented-architecture/blob/main/images/Docker%20Containers.PNG)
 
 - The SOA Pattern used is Client/Server/Service
