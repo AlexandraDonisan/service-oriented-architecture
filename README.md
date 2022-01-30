@@ -28,3 +28,5 @@ Think of a spirit of your taste and "CockTale" will tell you how to prepare the 
   - Cocktail App
 
   ![Docker Containers](https://github.com/AlexandraDonisan/service-oriented-architecture/blob/main/Docker%20Containers.PNG)
+
+- The SOA Pattern used is Client/Server/Service
